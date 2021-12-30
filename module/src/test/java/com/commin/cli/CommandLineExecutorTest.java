@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -55,14 +56,45 @@ public class CommandLineExecutorTest {
      */
     @Test
     public void status_test() {
-        // String command = "transporter";
-        // Map<String, List<String>> arg1 = new HashMap<>();
-        // Map<String, List<String>> arg2 = new HashMap<>();
-        // CommandLineExecutor.execute(command, arg1, arg2);
 
         boolean result = CommandLineExecutor.execute(
                 "transporter -m status -u danalmusic@danalenter.co.kr  -p ixso-spww-vant-omuc -vendor_id 8809838633884 -t Aspera");
 
         assertTrue(result);
+    }
+
+    @Test
+    public void args_test() {
+        String command = "transporter";
+        Map<String, String> argMap = new HashMap<>();
+        argMap.put("-m", "status");
+        argMap.put("-u", "danalmusic@danalenter.co.kr");
+        argMap.put("-p", "ixso-spww-vant-omuc");
+        argMap.put("-vendor_id", "8809838633884");
+        argMap.put("-t", "Aspera");
+
+        boolean result = CommandLineExecutor.execute(command, argMap);
+        assertTrue(result);
+    }
+
+    @Test
+    public void alalal() {
+        String cmd = "transporter";
+        Map<String, String> argMap = new HashMap<>();
+        // argMap.put("-m", "status");
+        // argMap.put("-u", "danalmusic@danalenter.co.kr");
+        // argMap.put("-p", "ixso-spww-vant-omuc");
+        // argMap.put("-vendor_id", "8809838633884");
+        // argMap.put("-t", "Aspera");
+
+        List<String> arr = argMap.keySet().stream().map(key -> {
+            return String.format("%s %s", key, argMap.get(key));
+        }).collect(Collectors.toList());
+
+        arr.add(0, cmd);
+
+        String result = String.join(" ", arr).trim();
+        System.out.println(result);
+
     }
 }

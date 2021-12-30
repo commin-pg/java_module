@@ -6,13 +6,25 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.*;
 
+import com.commin.utils.CommandParser;
+
 /**
  * CommandLineExecutor
  */
 public class CommandLineExecutor {
 
-    public static boolean execute(String cmd, Map<String, List<String>>... args) {
-        return true;
+    // public static boolean execute(String cmd, Map<String, List<String>>... args)
+    // {
+    // return true;
+    // }
+
+    public static boolean execute(String cmd, Map<String, String> argMap) {
+        try {
+            return CommandLineExecutor.execute(CommandParser.joinCommand(cmd, argMap));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     /**
