@@ -77,24 +77,4 @@ public class CommandLineExecutorTest {
         assertTrue(result);
     }
 
-    @Test
-    public void alalal() {
-        String cmd = "transporter";
-        Map<String, String> argMap = new HashMap<>();
-        // argMap.put("-m", "status");
-        // argMap.put("-u", "danalmusic@danalenter.co.kr");
-        // argMap.put("-p", "ixso-spww-vant-omuc");
-        // argMap.put("-vendor_id", "8809838633884");
-        // argMap.put("-t", "Aspera");
-
-        List<String> arr = argMap.keySet().stream().map(key -> {
-            return String.format("%s %s", key, argMap.get(key));
-        }).collect(Collectors.toList());
-
-        arr.add(0, cmd);
-
-        String result = String.join(" ", arr).trim();
-        System.out.println(result);
-
-    }
 }
