@@ -73,6 +73,8 @@ public class CommandLineExecutorTest {
         argMap.put("-vendor_id", "8809838633884");
         argMap.put("-t", "Aspera");
 
+        System.out.println("Hello ");
+
         boolean result = CommandLineExecutor.execute(command, argMap);
         assertTrue(result);
     }
