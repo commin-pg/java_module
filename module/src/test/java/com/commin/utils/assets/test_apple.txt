@@ -1,0 +1,45 @@
+Start Date	End Date	UPC	ISRC/ISBN	Vendor Identifier	Quantity	Partner Share	Extended Partner Share	Partner Share Currency	Sales or Return	Apple Identifier	Artist/Show/Developer/Author	Title	Label/Studio/Network/Developer/Publisher	Grid	Product Type Identifier	ISAN/Other Identifier	Country Of Sale	Pre-order Flag	Promo Code	Customer Price	Customer Currency
+08/02/2021	08/02/2021		KRB361210183	KRB361210183	1			AUD		506147465	Groove Edition	행복한 나를 (Me Happy) [In the Style of Eco]	Musicen & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361210402	KRB361210402	2			AUD		507896343	Groove Edition	어렵고도 쉬운 (Hard But Easy) [From "천하무적이평강 Invincible Lee Pyung Gang"] [In the Style of Krystal & Luna]	Musicen & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361210426	KRB361210426	1			AUD		508015463	Groove Edition	감사 (Gratitude) [In the Style of Kim Dong Ryul]	Musicen & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361210525	KRB361210525	1			AUD		510720582	SMART BOOKS	Reach for the Sky	SMART BOOKS & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		FR9W10508013	FR9W10508013	1			AUD		516606335	PK	예수 이름이 온 땅에	PK Ministry & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		FR9W10508015	FR9W10508015	1			AUD		516606340	PK	주 발 앞에 나 엎드려 (One Way)	PK Ministry & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200158	KRB361200158	1			AUD		518610005	Bobby Moon	Ma Baby	Bobby Sound & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200341	KRB361200341	4			AUD		533837656	MYNAME	Hello & Goodbye	H2MEDIA & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200402	KRB361200402	1			AUD		536914626	Scott Brenner, 다윗의 장막	Joshua's Army	Shekinah Media & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200416	KRB361200416	2			AUD		536914920	Scott Brenner, 다윗의 장막	Freedom (Spontaneous Version)	Shekinah Media & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200455	KRB361200455	1			AUD		537302517	Scott Brenner, 다윗의 장막	The Father's Song	Shekinah Media & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361211956	KRB361211956	1			AUD		544636418	Groove Edition	Round And Round (빙글 빙글) [Originally Performed By T-ara] [Karaoke]	Musicen & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200652	KRB361200652	1			AUD		544752929	015B	Let Me Go	Mbro & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200855	KRB361200855	2			AUD		550949744	Hanul, 김진표	Tell Me	R's Company & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361200876	KRB361200876	1			AUD		550956762	Johan Kim	Curse	R's Company & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361212000	KRB361212000	18			AUD		554627884	ALi	Carry On (From "신의") [Original Television Soundtrack], Pt. 1.	Starhaus Entertainment, OnTheM & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361201067	KRB361201067	2			AUD		555920851	페임 제이	Sniper Sound vs. Overclass (feat. Leo Kekoa, Illinit, San.E & K.Jun)	FACTORY BOi Production		H3		AU				
+08/02/2021	08/02/2021		KRB361212023	KRB361212023	2			AUD		559651418	Shin Yong Jae	걸음이 느려서 (From "신의") [Original Television Soundtrack], Pt. 2.	Starhaus Entertainment, OnTheM & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361212034	KRB361212034	1			AUD		561663036	Oh Joon Sung	Faith - Main Title (String Version)	Starhaus Entertainment, OnTheM & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361212037	KRB361212037	1			AUD		561663041	Oh Joon Sung	Sadness (PF String Version)	Starhaus Entertainment, OnTheM & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361212154	KRB361212154	1			AUD		569229237	Young Jun	바람의 노래	Starhaus Entertainment, OnTheM & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361201477	KRB361201477	1			AUD		580451310	PD BLUE	사랑은 감기 같아서 (Love Is Like a Cold) [feat. 바바라]	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361300000	KRB361300000	1			AUD		590651473	Jworship	主イエス神の愛 (Japanese ver.) [feat. 홍의석]	Praise Honor Worship Ministry & Pison Contents		S3		AU				
+08/02/2021	08/02/2021		KRB361300565	KRB361300565	2			AUD		606104172	DJYAME	Party Base	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361300741	KRB361300741	1			AUD		619734471	Seulki Hong	주 임재 천국과 같네 (Your Presence Is Heaven)	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361300843	KRB361300843	1			AUD		624448697	Apparition	Transcend This Mortal Coil (Instrumental)	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361300938	KRB361300938	7			AUD		633370276	Cold Cherry	Growing Pains	Base Music & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301355	KRB361301355	1			AUD		648268754	Glen Check	Vogue Boys And Girls	SOUNDHOLIC ENT & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301354	KRB361301354	1			AUD		648268755	Glen Check	French Virgin Party	SOUNDHOLIC ENT & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301351	KRB361301351	1			AUD		648268758	Glen Check	Battaille!	SOUNDHOLIC ENT & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301278	KRB361301278	2			AUD		648299395	MONNI	Don't Hesitate	SOUNDHOLIC ENT & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301210	KRB361301210	2			AUD		648785528	Savina & Drones	Stay	Woman And Man's Music & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301168	KRB361301168	1			AUD		648816091	MONNI	You're Going To Leave	SOUNDHOLIC ENT & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301616	KRB361301616	1			AUD		655367006	DJ.Mulder	Re-Fresh (feat. JuWon)	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361301937	KRB361301937	1			AUD		690400902	Flaming Heart	In Summer Night (한여름밤에)	Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361303603	KRB361303603	1			AUD		734294836	SMART BOOKS	Fun with Phonics	SMART BOOKS & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361308235	KRB361308235	3			AUD		781357285	R45	Open the Gates of Your Grace	MUNARO & Pison Contents		H3		AU				
+08/02/2021	08/02/2021		KRB361308239	KRB361308239	3			AUD		781357290	R45	As I Gaze upon You Lord	MUNARO & Pison Contents		H3		AU				
+Row Count	261
+Country Of Sale	Total iTunes Plays	Total iTunes Match	iTunes Converted Unit Total	Total iTunes Cloud Fees	Share Per Converted Unit	Partner Converted Unit Total	Cloud Partner Share	US Publisher Share	Total Share	Effective Subscriptions	Active Subscriptions
+AU	0	75325968	75325968	68305.39	.0009067973743131983381880	597	0.45		0.45	39982.47	42300
+Cloud Total	0.45
+Sales Total	63.96
+Total Amount	64.41

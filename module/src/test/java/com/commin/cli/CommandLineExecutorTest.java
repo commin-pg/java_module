@@ -3,9 +3,7 @@ package com.commin.cli;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -21,6 +19,9 @@ public class CommandLineExecutorTest {
     public void diagnostic_test() {
         boolean result = CommandLineExecutor.execute(
                 "transporter.cmd -m diagnostic -u danalmusic@danalenter.co.kr  -p ixso-spww-vant-omuc -v eXtreme");
+        // SalesCommonDTO salesCommonDTO =
+        // SalesCommonDTO.builder().trackCode("abc").build();
+        
         assertTrue(result);
     }
 

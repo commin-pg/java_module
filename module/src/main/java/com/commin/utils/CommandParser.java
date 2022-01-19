@@ -18,6 +18,8 @@ public class CommandParser {
         command_result_arr.add(0, cmd);
 
         List<String> command_args = argMap.keySet().stream().map(key -> {
+            if(!key.startsWith("-"))
+                throw new NullPointerException();
             return String.format("%s %s", key, argMap.get(key));
         }).collect(Collectors.toList());
 

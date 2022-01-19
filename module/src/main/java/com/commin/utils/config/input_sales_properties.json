@@ -1,0 +1,12 @@
+{
+    "options": [{
+        "store": "amazon",
+        "titleLineNum": 1
+    }, {
+        "store": "itunes",
+        "titleLineNum": 5,
+        "subOptions": [
+            "", ""
+        ]
+    }]
+}

@@ -1,0 +1,25 @@
+dataset date	territory code	subscription plan	streams	offline plays	total plays	track asin	isrc	proprietary track id	track name	proprietary album id	digital album upc	album name	artist name	label name	effective royalties in ratecard currency	effective royalties in settlement currency	play type	ratecard currency	settlement currency
+																			
+202108	JP	Amazon Ad Supported	1	0	1	B00X9UELYO	KRB361300000	KRB361300000	主イエス神の愛 (Japanese Version)	886470946273	886470946273	Jworship2 (主イエスに捧げる日本の敬?と?美) (Japanese ver.)	Jworship [feat. 홍의석]	Praise Honor Worship Ministry & Pison Contents	0.14	0.14	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	2	0	2	B071HT32H1	KRNAR1702479	KRNAR1702479	花も (Flowers)	888344133024	888344133024	Jworship 4 (日本に?えられた?美の油注ぎ) (Japanese Ver.)	Jworship [feat. Jae Ho Han]	PHWM	0.28	0.28	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	3	0	3	B07FFW3XLQ	KRMIM1804492	KRMIM1804492	Plies	888344164745	888344164745	Piano Music for Ballet Class vol.1	Ji in Jeong	Pison Contents	0.42	0.42	STATION	JPY	JPY
+			 																
+202108	JP	Amazon Ad Supported	16	0	16	B07T9ZDHYC	KRMIM1903654	KRMIM1903654	on Mars	888344184019	888344184019	a s t r o n a u t	Lofi	Antique Sound Lab	2.24	2.24	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	1	0	1	B07BFV27NC	KRB361212036	KRB361212036	Smile (Lovely Face - Eunsoo)	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Oh Joon Seong	Starhaus Entertainment & OnTheM	0.14	0.14	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	2	0	2	B07BFTXCXS	KRB361212037	KRB361212037	Sadness (PF String Version)	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Oh Joon Seong	Starhaus Entertainment & OnTheM	0.28	0.28	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	1	0	1	B072PZVP3W	KRNAR1703744	KRNAR1703744	OneDirection	888344134878	888344134878	TreasureMap	KIMPD	Pison Contents	0.14	0.14	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	2	0	2	B07BFTY2FT	KRB361212033	KRB361212033	Bad Guy	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Jang Hye Jin [feat. MC Sniper]	Starhaus Entertainment & OnTheM	0.28	0.28	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	10	0	10	B07T33BFPR	KRMIM1903656	KRMIM1903656	Return to the Earth	888344184019	888344184019	a s t r o n a u t	Lofi	Antique Sound Lab	1.4	1.4	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	11	0	11	B07BFTRB76	KRB361212023	KRB361212023	걸음이 느려서 (From "신의") [Original Television Soundtrack], Pt. 2.	886470767250	886470767250	Original Television Soundtrack, Pt. 2.	Shin Yong Jae	Starhaus Entertainment & OnTheM	1.54	1.54	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	11	0	11	B07T9ZRD4D	KRMIM1903653	KRMIM1903653	docking to the space station	888344184019	888344184019	a s t r o n a u t	Lofi	Antique Sound Lab	1.54	1.54	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	5	0	5	B07BFTGXYP	KRB361212034	KRB361212034	Faith (Main Title) (String Version)	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Oh Joon Seong	Starhaus Entertainment & OnTheM	0.7	0.7	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	7	0	7	B07T58YFBN	KRMIM1903652	KRMIM1903652	Launch of lofi 13	888344184019	888344184019	a s t r o n a u t	Lofi	Antique Sound Lab	0.98	0.98	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	1	0	1	B00X9UEQ1M	KRB361300001	KRB361300001	ありのままに (Japanese Version)	886470946273	886470946273	Jworship2 (主イエスに捧げる日本の敬?と?美) (Japanese ver.)	Jworship [feat. 박찬미]	Praise Honor Worship Ministry & Pison Contents	0.14	0.14	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	1	0	1	B071S5GJFX	KRNAR1702485	KRNAR1702485	主の愛注ぐ (Lord, Pour out Your Love)	888344133024	888344133024	Jworship 4 (日本に?えられた?美の油注ぎ) (Japanese Ver.)	Jworship [feat. Moon Young Park]	PHWM	0.14	0.14	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	26	0	26	B07BFTY2FT	KRB361212033	KRB361212033	Bad Guy	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Jang Hye Jin [feat. MC Sniper]	Starhaus Entertainment & OnTheM	3.64	3.64	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	3	0	3	B08HSJ6777	KRMIM2022727	KRMIM2022727	You Are Beautiful	888344208913	888344208913	You Are Beautiful	Royal Music	Pison Contents	0.42	0.42	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	10	0	10	B07BFTW4SL	KRB361212000	KRB361212000	Carry On (From "신의"), Pt. 1. (Original Television Soundtrack)	886470735228	886470735228	Carry On (From "신의") [Original Television Soundtrack], Pt. 1.	Ali	Starhaus Entertainment & OnTheM	1.4	1.4	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	4	0	4	B08HSHJH8K	KRMIM2022732	KRMIM2022732	For You	888344208913	888344208913	You Are Beautiful	Royal Music	Pison Contents	0.56	0.56	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	11	0	11	B07TB11C37	KRMIM1903655	KRMIM1903655	forced landing	888344184019	888344184019	a s t r o n a u t	Lofi	Antique Sound Lab	1.54	1.54	STATION	JPY	JPY
+202108	JP	Amazon Ad Supported	2	0	2	B07BFV2HK3	KRB361212039	KRB361212039	Move and Run (String Version)	886470786794	886470786794	Original Television Soundtrack, Pt. 3	Oh Joon Seong	Starhaus Entertainment & OnTheM	0.28	0.28	STATION	JPY	JPY
+		 																	
