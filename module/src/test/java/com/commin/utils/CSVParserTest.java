@@ -1,7 +1,6 @@
 package com.commin.utils;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,12 +9,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import com.commin.sales.dto.SalesCommonDTO;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,44 +28,6 @@ public class CSVParserTest {
     public void init() {
         salesCSVParser = new SalesCSVParser();
     }
-
-    // amazone
-    @Test
-    public void parserTestForAmazone() {
-        salesCSVParser.parserCSVByTabForAmazone();
-        assertTrue(true);
-    }
-
-    // apple - applemusic
-
-    @Test
-    public void parserTestForAppleMusic() {
-        salesCSVParser.parserCSVByTabForAppleMusic();
-        assertTrue(true);
-    }
-
-    // apple - itunes
-    @Test
-    public void parserTestForItunes() {
-        salesCSVParser.parserCSVByTabForItunes();
-        assertTrue(true);
-    }
-
-    // deezer
-    @Test
-    public void parserTestForDeezer() {
-        salesCSVParser.parserCSVByTabForDeezer();
-        assertTrue(true);
-    }
-
-    // spotify
-    @Test
-    public void parserTestForSpotify() {
-        salesCSVParser.parserCSVByTabForSpotify();
-        assertTrue(true);
-    }
-
-    // kkbox, qqmusic > excel
 
     @Test
     public void separatorForTab() {
@@ -76,13 +40,24 @@ public class CSVParserTest {
         assertEquals(result.size(), 2);
     }
 
+    @Test
+    public void aaa(){
+        
+        File f = new File(".\\src\\main\\resources\\config\\input_sales_properties.json");
+        if(f.exists()){
+            System.out.println("EXIST");
+        }
+    }
+
     /**
      * * Note
      * 1. TitleLineNum이 필요할듯
      */
     @Test
     public void separetorTest() {
-        File f = new File("./src/test/java/com/commin/utils/assets/test_apple.txt");
+        // 준비 1 CSV 파일 파싱
+        // module\src\main\resources\config\input_sales_properties.json
+        File f = new File("./src/test/java/com/commin/utils/assets/test.txt");
         FileReader fr = null;
         BufferedReader br = null;
 
@@ -100,29 +75,61 @@ public class CSVParserTest {
                 if (line != null && !line.trim().isEmpty() && !line.trim().equals("")) {
                     List<String> parseResultList = CSVParser.separatorForTab(line.trim()); // Parsing된 Row 리스트 한줄 읽었음.
                     readLineNum++; // 한줄 읽었으니 읽은 라인 넘버 올리기
-                    if (readLineNum < titleLineNum) {
-                        // titleLineNum 보다 작으면 아직 타이틀을 시작한게 아니니까 documentStatusList 넣기
-                        documentStatusQueue.add(parseResultList);
-                    }
                     if (readLineNum == titleLineNum) { // titleLineNumber와 같으면 타이틀 리스트 가져오는 로직 수행
                         titleList = parseResultList;
-                    } else if(readLineNum > titleLineNum){ // titleLineNumber보다 크면 데이터 row로 판단.
-                        salesDataRowQueue.add(parseResultList);
-                    }else{
-                        // SubOption 
-                        // SubOption 
+                    } else if (readLineNum > titleLineNum) { // titleLineNumber보다 크면 데이터 row로 판단.
+                        if (titleList.size() >= parseResultList.size()) {
+                            salesDataRowQueue.add(parseResultList);
+                        } else {
+                            System.out.println("타이틀 컬럼 개수보다 데이터 커럼개수가 더 많음 ");
+                            salesDataRowQueue.add(parseResultList.subList(0, titleList.size()));
+                        }
+                    } else {
+                        // SubOption 인지 확인
+                        if (parseResultList != null && !parseResultList.isEmpty()) {
+                            documentStatusQueue.add(parseResultList);
+                        }
                     }
 
                 }
             }
 
-            System.out.println(String.join("	", titleList));
-            while (!salesDataRowQueue.isEmpty()) {
-                List<String> salesRowData = salesDataRowQueue.poll();
-                System.out.println(String.join("	", salesRowData));
+            // 준비 2 옵션
+            Map<String, JSONObject> stores = new HashMap<>();
+            JsonOptionParser jsonOptionParser = new JsonOptionParser("");
+            stores = jsonOptionParser.getJSONOption();
 
+            // Directory 명명규칙에따라 AMAZON, APPLE, SPOTIFY 등을 알 수 있음.
+            String[] dirs = { "AMAZON" };// APPLE은 SubDirectory 까지 뒤져서 ITUNES, APPLEMUSIC을 구분
+            for (String dirName : dirs) {
+                JSONObject option = stores.get(dirName);
+
+                String storeName = option.optString("store");// 필수 옵션
+                String serviceType = option.optString("serviceType");
+                JSONArray mappingArray = option.getJSONArray("mappings");// 필수 옵션
+
+                if (storeName != null && mappingArray != null && !mappingArray.isEmpty()) {
+                    while (!salesDataRowQueue.isEmpty()) {
+                        List<String> salesRowData = salesDataRowQueue.poll();
+
+                        // 공통인 data (정산요율, 서비스타입, 스토어이름 등등) 가져와서셋팅
+                        SalesCommonDTO sale = new SalesCommonDTO(storeName, serviceType);
+
+                        for (int i = 0; i < mappingArray.length(); i++) {
+                            String dtoColumnName = mappingArray.getJSONObject(i).getString("variableName");
+                            String csvTitle = mappingArray.getJSONObject(i).getString("csvTitle");
+                            System.out.println(String.format("%s : %s ==> %s", dtoColumnName, csvTitle,
+                                    salesRowData.get(titleList.indexOf(csvTitle))));
+                            sale.setVariable(dtoColumnName, salesRowData.get(titleList.indexOf(csvTitle)));
+                        }
+                        System.out.println();
+
+                    }
+                    System.out.println();
+                } else {
+                    // throw Exception
+                }
             }
-            System.out.println();
 
         } catch (Exception e) {
             e.printStackTrace();
