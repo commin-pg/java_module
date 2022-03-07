@@ -21,7 +21,7 @@ public class CommandLineExecutorTest {
                 "transporter.cmd -m diagnostic -u danalmusic@danalenter.co.kr  -p ixso-spww-vant-omuc -v eXtreme");
         // SalesCommonDTO salesCommonDTO =
         // SalesCommonDTO.builder().trackCode("abc").build();
-        
+
         assertTrue(result);
     }
 
@@ -63,9 +63,11 @@ public class CommandLineExecutorTest {
 
         assertTrue(result);
     }
+    // iTMSTransporter -m lookupArtist -u bob -p <password> -n "John Appleseed" -v
+    // off
 
     @Test
-    public void args_test() {
+    public void args_test2() {
         String command = "transporter";
         Map<String, String> argMap = new HashMap<>();
         argMap.put("-m", "status");
@@ -80,4 +82,21 @@ public class CommandLineExecutorTest {
         assertTrue(result);
     }
 
+    @Test
+    public void args_test_vvv() {
+        String command = "transporter";
+        Map<String, String> argMap = new HashMap<>();
+        argMap.put("-m", "lookupArtist");
+        argMap.put("-u", "danalmusic@danalenter.co.kr");
+        argMap.put("-p", "ixso-spww-vant-omuc");
+        argMap.put("-n", "John Appleseed");
+        argMap.put("-v", "off");
+        argMap.put("-vendor_id", "8809838633884");
+        argMap.put("-t", "Aspera");
+
+        System.out.println("Hello ");
+
+        boolean result = CommandLineExecutor.execute(command, argMap);
+        assertTrue(result);
+    }
 }

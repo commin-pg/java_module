@@ -76,6 +76,12 @@ public class SalesCommonDTO {
             case "SALESCOUNTRY":
                 setSalesCountry(data);
                 break;
+            case "SALESBEGIN":
+                setSalesBegin(data);
+                break;
+            case "SALESEND":
+                setSalesEnd(data);
+                break;
             default:
                 throw new Exception("No Mapping Column : " + dtoColumnName);
         }

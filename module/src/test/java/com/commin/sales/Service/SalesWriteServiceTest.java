@@ -55,8 +55,8 @@ public class SalesWriteServiceTest {
 
         Map<String, JSONObject> stores = parser.getJSONOption();
 
-        // String[] dirs = { "amazon", "apple_applemusic" };
-        String[] dirs = { "amazon" };
+        // String[] dirs = { "amazon", "apple_applemusic", "spotify" ,"deezer"};
+        String[] dirs = { "deezer", };
         String[] amazon_file_paths = {
                 ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\amazon\\ZQPSC_Monthly_ADS_Usage_202108_EU.txt",
                 ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\amazon\\ZQPSC_Monthly_ADS_Usage_202108_JP.txt",
@@ -64,26 +64,72 @@ public class SalesWriteServiceTest {
                 ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\amazon\\ZQPSC_Monthly_ADS_Usage_202108_ROW_NA.txt"
         };
         String[] aplle_applemusic_file_paths = {
-                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\applemusic\\S1_90638285_1021_AE.txt",
-                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\applemusic\\S1_90638285_1021_AU.txt",
-                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\applemusic\\S1_90638285_1021_BG.txt",
+                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\APPLEMUSIC\\S1_90638285_1021_AE.txt",
+                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\APPLEMUSIC\\S1_90638285_1021_AU.txt",
+                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\apple\\APPLEMUSIC\\S1_90638285_1021_BG.txt",
         };
+        String[] spotify_file_paths = {
+                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\spotify\\spotify-track-for-test-202103_copy.txt",
+        };
+
+        String[] deezer_file_paths = {
+                ".\\src\\main\\resources\\202108_Sales_Data\\overseas\\deezer\\Deezer_test_20210301_20210331.txt",
+        };
+
         List<SalesCommonDTO> resultDTOList = new ArrayList<>();
 
         for (String dir : dirs) {
             String[] filePaths = null;
             if (dir.equals("amazon")) {
                 filePaths = amazon_file_paths;
+            } else if (dir.equals("spotify")) {
+                filePaths = spotify_file_paths;
+            } else if (dir.equals("deezer")) {
+                filePaths = deezer_file_paths;
             } else {
                 filePaths = aplle_applemusic_file_paths;
             }
-
+            // SPOTIFY == spotify
             JSONObject store = stores.get(dir.toUpperCase());
+            // 필수 옵션 //
+            String storeName = store.optString("store");
+            int titleLineNum = 0;
 
-            String storeName = store.optString("store");// 필수 옵션
-            int titleLineNum = store.getInt("titleLineNum");
+            try {
+                titleLineNum = store.getInt("titleLineNum");
+            } catch (Exception e) {
+            }
+
             String serviceType = store.optString("serviceType");
-            JSONArray mappingArray = store.getJSONArray("mappings");// 필수 옵션
+            JSONArray mappingArray = store.getJSONArray("mappings");
+            List<String> titles = new ArrayList<>();
+            // 필수 옵션 끝 //
+
+            // 선택 옵션
+            int subTitleLineNum = -1;
+            String subOptionType = null;
+            JSONArray subMappingArray = null;
+            JSONObject subMappingOption = null;
+
+            try {
+                JSONArray json_titles = store.getJSONArray("titles");
+                if (json_titles != null) {
+                    for (int i = 0; i < json_titles.length(); i++) {
+                        titles.add(json_titles.get(i).toString());
+                    }
+                }
+            } catch (Exception e) {
+
+            }
+            try {
+                subMappingOption = store.getJSONObject("subMapping");
+            } catch (Exception e) {
+            }
+            if (subMappingOption != null) {
+                subTitleLineNum = subMappingOption.getInt("subTitleLineNum");
+                subOptionType = subMappingOption.getString("type");
+                subMappingArray = subMappingOption.getJSONArray("mappings");//
+            }
 
             for (String filePath : filePaths) {
                 try {
@@ -91,11 +137,11 @@ public class SalesWriteServiceTest {
                     if (file.exists()) {
                         // 1. CSV 파일 하나씩 열어서 파싱
 
-                        resultDTOList.addAll(SalesDTOWrapper.wrap(new SalesCSVParser().parse(
-                                file,
-                                storeName,
-                                titleLineNum),
-                                storeName, serviceType, mappingArray));
+                        resultDTOList.addAll(SalesDTOWrapper.wrap(
+                                new SalesCSVParser().parse(file, storeName, titleLineNum, subOptionType,
+                                        subTitleLineNum, titles),
+                                storeName, serviceType,
+                                mappingArray, subMappingArray));
 
                     } else {
                         System.err.println("File Not Found");
@@ -115,6 +161,8 @@ public class SalesWriteServiceTest {
             System.out.println();
 
         }
+
+        System.out.println();
 
     }
 }

@@ -15,13 +15,23 @@ import java.util.Queue;
 public class SalesCSVParser {
 
     // common
-    public Map<String, Object> parse(File f, String storeName, int titleLineNum)
+    public Map<String, Object> parse(File f, String storeName, int titleLineNum, String subOptionType,
+            int subTitleLineNum, List<String> titles)
             throws FileNotFoundException {
 
         FileReader fr = null;
         BufferedReader br = null;
 
         List<String> titleList = new ArrayList<>();
+
+        if (titles != null && !titles.isEmpty()) {
+            titleList = titles;
+        }
+
+        List<String> subTitleList = new ArrayList<>();
+
+        List<String> subTempDocumentList = new ArrayList<>();
+
         Queue<List<String>> documentStatusQueue = new LinkedList<>();
         Queue<List<String>> salesDataRowQueue = new LinkedList<>();
         Map<String, Object> resultMap = new HashMap<>();
@@ -44,19 +54,45 @@ public class SalesCSVParser {
                             System.out.println("타이틀 컬럼 개수보다 데이터 커럼개수가 더 많음 ");
                             salesDataRowQueue.add(parseResultList.subList(0, titleList.size()));
                         }
-                    } else {
-                        // SubOption 인지 확인
-                        if (parseResultList != null && !parseResultList.isEmpty()) {
-                            documentStatusQueue.add(parseResultList);
+                    } else {// Title Row 이전 이면 SubOption Row로 판단 .
+                        // SubOption 을 사용하는지 확인
+
+                        if (subOptionType != null) {
+                            switch (subOptionType) {
+                                case "vertical": {
+                                    if (readLineNum >= subTitleLineNum) {
+                                        subTitleList.add(parseResultList.get(0));
+                                        subTempDocumentList.add(parseResultList.get(1));
+                                    }
+                                    break;
+                                }
+                                case "horizontal": {
+                                    if (readLineNum == subTitleLineNum) {
+                                        subTitleList = parseResultList;
+                                    } else if (readLineNum > subTitleLineNum && titleLineNum > subTitleLineNum) {
+                                        if (parseResultList != null && !parseResultList.isEmpty()) {
+                                            documentStatusQueue.add(parseResultList);
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
                         }
+
                     }
 
                 }
             }
 
+            if (subOptionType != null && subOptionType.equals("vertical")) {
+                documentStatusQueue.add(subTempDocumentList);
+            }
+
             resultMap.put("titleList", titleList);
-            resultMap.put("documentStatusQueue", documentStatusQueue);
+            resultMap.put("subTitleList", subTitleList);
             resultMap.put("salesDataRowQueue", salesDataRowQueue);
+
+            resultMap.put("documentStatusQueue", documentStatusQueue);
             return resultMap;
 
             // while (!salesDataRowQueue.isEmpty()) {

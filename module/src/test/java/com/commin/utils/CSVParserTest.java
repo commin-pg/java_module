@@ -41,10 +41,10 @@ public class CSVParserTest {
     }
 
     @Test
-    public void aaa(){
-        
+    public void aaa() {
+
         File f = new File(".\\src\\main\\resources\\config\\input_sales_properties.json");
-        if(f.exists()){
+        if (f.exists()) {
             System.out.println("EXIST");
         }
     }
@@ -210,10 +210,11 @@ public class CSVParserTest {
     public void separatorTestBasic() {
         List<String> titles = CSVParser.separatorForTab(
                 "Start Date	End Date	UPC	ISRC/ISBN	Vendor Identifier	Quantity	Partner Share	Extended Partner Share	Partner Share Currency	Sales or Return	Apple Identifier	Artist/Show/Developer/Author	Title	Label/Studio/Network/Developer/Publisher	Grid	Product Type Identifier	ISAN/Other Identifier	Country Of Sale	Pre-order Flag	Promo Code	Customer Price	Customer Currency");
-        System.out.println(String.join(",", titles));
+        System.out.println(String.join("\t", titles));
+        System.out.println();
         List<String> result = CSVParser.separatorForTab(
                 "08/02/2021	08/02/2021		KRB361210183	KRB361210183	1			AUD		506147465	Groove Edition	행복한 나를 (Me Happy) [In the Style of Eco]	Musicen & Pison Contents		H3		AU				");
-        System.out.println(String.join(",", result));
+        System.out.println(String.join("\t", result));
     }
 
     @Test
@@ -221,7 +222,7 @@ public class CSVParserTest {
 
         String dirName = System.getProperty("user.dir");
         System.out.println(dirName);
-        File f = new File("./src/test/java/com/commin/utils/assets/test_apple.txt");
+        File f = new File("./src/test/java/com/commin/utils/assets/test.txt");
         FileReader fr = null;
         BufferedReader br = null;
         Map<String, List<String>> resultMap = new HashMap<String, List<String>>();
@@ -264,8 +265,9 @@ public class CSVParserTest {
             System.out.println("-----------------------------------------------------------------------------");
             for (String key : resultMap.keySet()) {
                 String columnName = key;
-                int rowNum = resultMap.get(key).size();
-                System.out.println(String.format("[ColumnName] : %s , [rowNum] : %d ", columnName, rowNum));
+                int totalRow = resultMap.get(key).size();
+                System.out.println(String.format("[Column] : %s : %s , [RowNum] : %d", columnName,
+                        resultMap.get(key), totalRow));
             }
 
             System.out.println("-----------------------------------------------------------------------------");
